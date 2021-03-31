@@ -1,0 +1,8 @@
+@pre x = 1
+@post rv = 2
+int fun(int x) {
+	{
+		int x := x + 1;
+		return x;
+	}
+}

@@ -1,0 +1,12 @@
+@pre true
+@post rv = x
+int fun1(int x) {
+	return x;
+}
+
+@pre true
+@post rv = x
+int fun(int x) {
+	if (true) x := x;
+	return fun1(fun1(fun1(x)));
+}

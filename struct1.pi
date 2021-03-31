@@ -1,0 +1,11 @@
+struct A {
+	int x;
+}
+
+@pre true
+@post rv.x > 0
+A fun() {
+	A a;
+	a.x := 1;
+	return a;
+}

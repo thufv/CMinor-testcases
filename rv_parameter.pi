@@ -1,0 +1,5 @@
+@pre true
+@post rv = 0
+void fun(int rv) {
+	return;
+}

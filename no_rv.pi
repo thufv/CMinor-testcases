@@ -1,0 +1,4 @@
+@pre true
+@post true
+int fun() {
+}

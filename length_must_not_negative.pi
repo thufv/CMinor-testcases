@@ -1,0 +1,8 @@
+predicate not_negative(int x) := x >= 0;
+
+@pre not_negative(x)
+@post not_negative(rv)
+int fun(int x) {
+	int[] a := new int[x];
+	return |a|;
+}

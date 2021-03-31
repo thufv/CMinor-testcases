@@ -1,0 +1,15 @@
+@pre  |arr| > 0
+@post true
+int max(int[] arr) {
+	int max := arr[0];
+	for
+		@ i <= |arr|
+		# (|arr| - i)
+		(int i := 1; i < |arr|; i := i + 1) 
+	{
+		if(arr[i] >= max) {
+			max := arr[i];
+		}
+	}
+	return max;
+}

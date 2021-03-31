@@ -1,0 +1,6 @@
+@pre true
+@post rv >= 0
+int fun(int x) {
+	int[] a := new int[x];
+	return 0;
+}

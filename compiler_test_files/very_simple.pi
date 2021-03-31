@@ -1,0 +1,14 @@
+@pre true
+@post |rv| > 5
+int[] jason2(int[] arr){
+	return arr;
+}
+
+@pre true
+@post rv > 5
+int jason(int[] arr){
+	int[] test;
+	test := jason2(arr);
+	int test_length := |test|;
+	return |test|;
+}

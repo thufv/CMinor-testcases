@@ -1,0 +1,8 @@
+int x;
+
+@pre true
+@post rv > 0
+int fun() {
+	x := 1;
+	return x;
+}

@@ -1,0 +1,6 @@
+@pre true
+@post true
+int fun(int x) {
+	if (true <-> ) return 1;
+	return 0;
+}

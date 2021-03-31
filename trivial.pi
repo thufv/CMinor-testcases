@@ -1,0 +1,16 @@
+// A trivial case to show the flaw of the method
+// A apparently correct program cannot be verified
+
+@pre true
+@post rv = 1
+int fun() {
+    int ans := 1;
+    int sum := 0;
+    for
+        @ true
+        (int i := 0; i < 6; i := i + 1)
+    {
+        sum := sum + i;
+    }
+    return ans;
+}

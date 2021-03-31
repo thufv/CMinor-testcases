@@ -1,0 +1,6 @@
+@pre true
+@post |rv { 0 <- |rv|}| > 1
+int[] fun() {
+	int[] a := new int[5];
+	return a;
+}

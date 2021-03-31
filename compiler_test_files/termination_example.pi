@@ -1,0 +1,39 @@
+@pre x_0 >= 0
+@post true
+void foo(int x_0) {
+	int x := x_0;
+	for	
+	# (x)
+	@x >=0
+	(; x > 0; x := x - 1) {}
+}
+
+# (y)
+@pre y >= 0 && y < 42
+@post true
+void b(int y) {
+	if (y = 0) return;
+	c(y-1);
+}
+
+# (z)
+@pre z >= 0 && z < 42
+@post true
+void c(int z) {
+	if (z = 0) return;
+	b(z-1);
+}
+
+# (1, x)
+@pre x >= 0 && x < 42
+@post true
+void a(int x) {
+	if (x = 0) return;
+	for
+		# (0, 42-i)
+		@ x > 0 && x < 42 && i <= 42
+		(int i := 0; i < 42; i := i + 1) {
+			b(x-1);
+		}
+	foo (x);
+}
