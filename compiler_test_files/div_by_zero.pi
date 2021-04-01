@@ -1,5 +1,5 @@
 @pre true
 @post true
 void foo() {
-	@ 1 / 0 = 1;
+	1 div 0 = 1;
 }

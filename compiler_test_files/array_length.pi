@@ -1,7 +1,7 @@
 @pre true
 @post |rv| > 5
 int[] jason2(int[] arr){
-	return arr;
+	return new int[10];
 }
 
 @pre true

@@ -1,0 +1,7 @@
+@pre true
+@post true
+# (rv)
+int fun()
+{
+	return 1;
+}

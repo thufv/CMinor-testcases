@@ -3,33 +3,12 @@ struct qs{
 	int[] array;
 }
 
-@pre  true
-@post sorted(rv, 0, |rv| - 1)
-int[] QuickSort(int[] a)
+@pre  l <= u
+@post l <= rv && rv <= u
+int random(int l, int u)
 {
-	return qsort(a, 0, |a| - 1);
-}
-
-@pre  l>=0 && u < |a_0| &&
-			partitioned(a_0, 0, l - 1, l, u) &&
-      partitioned(a_0, l, u, u + 1, |a_0| - 1) &&
-      l <= u + 1
-@post sorted(rv,l,u) &&
-			|rv|=|a_0| &&
-			eq(a_0,rv,0,l-1) && eq(a_0,rv,u+1,|rv|-1) &&
-			partitioned(rv, 0, l - 1, l, u) &&
-      partitioned(rv, l, u, u + 1, |a_0| - 1)
-# (u - l + 1)
-int[] qsort(int[] a_0, int l, int u) {
-	if (l >= u) 
-		return a_0;
-	else {
-		qs p := partition(a_0, l, u);
-		int[] a := p.array;
-		a := qsort(a, l, p.pivot - 1);
-		a := qsort(a, p.pivot + 1, u);
-		return a;
-  }
+	/* a placeholder: only the @post is important */
+	return u;
 }
 
 @pre  l<=u && l>=0 && u<|a_0| &&
@@ -86,10 +65,31 @@ qs partition(int[] a_0, int l, int u) {
 	return tmp;
 }
 
-@pre  l <= u
-@post l <= rv && rv <= u
-int random(int l, int u)
+@pre  l>=0 && u < |a_0| &&
+			partitioned(a_0, 0, l - 1, l, u) &&
+      partitioned(a_0, l, u, u + 1, |a_0| - 1) &&
+      l <= u + 1
+@post sorted(rv,l,u) &&
+			|rv|=|a_0| &&
+			eq(a_0,rv,0,l-1) && eq(a_0,rv,u+1,|rv|-1) &&
+			partitioned(rv, 0, l - 1, l, u) &&
+      partitioned(rv, l, u, u + 1, |a_0| - 1)
+# (u - l + 1)
+int[] qsort(int[] a_0, int l, int u) {
+	if (l >= u) 
+		return a_0;
+	else {
+		qs p := partition(a_0, l, u);
+		int[] a := p.array;
+		a := qsort(a, l, p.pivot - 1);
+		a := qsort(a, p.pivot + 1, u);
+		return a;
+  }
+}
+
+@pre  true
+@post sorted(rv, 0, |rv| - 1)
+int[] QuickSort(int[] a)
 {
-	/* a placeholder: only the @post is important */
-	return u;
+	return qsort(a, 0, |a| - 1);
 }

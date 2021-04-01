@@ -6,5 +6,6 @@ void foobar() {
 	int z;
 	if (a && b) {}
 	if (a || true) {}
-	if (a && z) {} // bad
+	if (!a) {}
+	if (!z) {}  // bad
 }

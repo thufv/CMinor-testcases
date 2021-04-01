@@ -1,3 +1,5 @@
+// all specifications should hold
+
 @pre x_0 >= 0 && x_0 % 2 = 0
 @post rv = x_0 div 2 + y_0
 int twoxy(int x_0, int y_0) {

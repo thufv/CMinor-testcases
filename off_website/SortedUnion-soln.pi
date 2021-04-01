@@ -1,11 +1,13 @@
-int e := ?;
+predicate sorted(int[] arr, int low, int high) := 
+  (forall sorted_a,sorted_b. ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) -> arr[sorted_a]<=arr[sorted_b]));
 
 @pre  sorted(a, 0, |a| - 1) 
       && sorted(b, 0, |b| - 1)
 @post sorted(rv, 0, |rv| - 1) 
-      && ((exists ix. (0 <= ix && ix <= |a| - 1 && a[ix] = e)
-           || exists ix. (0 <= ix && ix <= |b| - 1 && b[ix] = e))
-          <-> exists ix. (0 <= ix && ix <= |rv| - 1 && rv[ix] = e))
+      && ((exists ix. (0 <= ix && ix <= |a| - 1 && a[ix] = 1)
+           || exists ix. (0 <= ix && ix <= |b| - 1 && b[ix] = 1))
+          <-> exists ix. (0 <= ix && ix <= |rv| - 1 && rv[ix] = 1))
+# (|a| + |b| + 1)
 int[] union(int[] a, int[] b) {
 	int[] u := new int[|a| + |b|];
 	int i := 0;
@@ -15,9 +17,9 @@ int[] union(int[] a, int[] b) {
 		@	i+j=k && i>=0 && j>=0 && i<=|a| && j<=|b| && |u|=|a|+|b| && k<=|u| &&
 			sorted(a, 0, |a| - 1) && sorted(b, 0, |b| - 1) && sorted(u,0,k-1) &&
 			(k>0 -> (i<|a|->u[k-1]<=a[i]) && (j<|b|->u[k-1]<=b[j])) &&
-			((exists ix. (0 <= ix && ix < i && a[ix] = e)
-				|| exists ix. (0 <= ix && ix < j && b[ix] = e))
-				<-> exists ix. (0 <= ix && ix < k && u[ix] = e))
+			((exists ix. (0 <= ix && ix < i && a[ix] = 1)
+				|| exists ix. (0 <= ix && ix < j && b[ix] = 1))
+				<-> exists ix. (0 <= ix && ix < k && u[ix] = 1))
 		# (|u| - k)
 		(int k := 0; k < |u|; k := k + 1)
 	{

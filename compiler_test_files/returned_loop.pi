@@ -1,0 +1,15 @@
+@pre true
+@post true
+int meow3(bool b) {
+	int x;
+	int y;
+	x := 42;
+	y := x + x;
+
+    for
+        @true
+    (;true;) {
+		y := y - 1;
+		return y;
+	}
+}

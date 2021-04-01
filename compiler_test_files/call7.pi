@@ -29,14 +29,5 @@ void foo() {
 	voidNoArg();
 	intNoArg();
 	voidOneArg(a);
-	iDontExist();  // bad
-	voidNoArg(a);  // bad
-	voidOneArg(a, a);  // bad
-	voidOneArg(b);  // bad
-	intTwoArg(a, b);
-	intTwoArg(b, a); // bad x 2
-	intTwoArg(a, a); // bad
-	a = intNoArg();
-	a = voidNoArg(); // bad
 	b = intNoArg();  // bad
 }

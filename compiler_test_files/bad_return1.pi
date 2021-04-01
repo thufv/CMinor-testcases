@@ -1,6 +1,6 @@
 @pre true
 @post true
-int foo() {
-	float x;
+void bar() {
+	int x;
 	return x;  // bad
 }

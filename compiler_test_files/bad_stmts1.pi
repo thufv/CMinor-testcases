@@ -1,0 +1,9 @@
+@pre true
+@post true
+void foo() {
+	int a;
+	bool b;
+	while @true (b = true) {}
+	for @true (a := 0; a < 5; a := a + 1) {}
+	for @true (a := 0; a + 1; a := a + 1) {} // bad
+}
