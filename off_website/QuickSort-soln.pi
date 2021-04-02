@@ -3,8 +3,18 @@ struct qs{
 	int[] array;
 }
 
+predicate sorted(int[] arr, int low, int high) := 
+  (forall sorted_a,sorted_b. ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) -> arr[sorted_a]<=arr[sorted_b]));
+
+predicate partitioned(int[] arr, int low1, int high1, int low2, int high2) :=
+  (forall partitioned_a, partitioned_b. ((low1 <= partitioned_a && partitioned_a <= high1 && low2 <= partitioned_b && partitioned_b <= high2)-> arr[partitioned_a]<=arr[partitioned_b]));
+
+predicate eq(int[] arr1, int[] arr2, int low, int high) := 
+  (forall eq_a. ((low <= eq_a && eq_a <= high) -> arr1[eq_a]=arr2[eq_a]));
+
 @pre  l <= u
 @post l <= rv && rv <= u
+# (u - l, 1)
 int random(int l, int u)
 {
 	/* a placeholder: only the @post is important */
@@ -21,6 +31,7 @@ int random(int l, int u)
     	partitioned(rv.array, rv.pivot, rv.pivot, rv.pivot + 1, u) &&
       partitioned(rv.array, 0, l - 1, l, u) &&
       partitioned(rv.array, l, u, u + 1, |a_0| - 1)
+# (u - l, 2)
 qs partition(int[] a_0, int l, int u) {
 	int[] a := a_0;
 	int pi := random(l, u);
@@ -40,7 +51,7 @@ qs partition(int[] a_0, int l, int u) {
 		partitioned(a, 0, l - 1, l, u) &&
     partitioned(a, l, u, u + 1, |a| - 1) &&
     u<|a_0|
-    # (u - j)
+    # (u - j, 0)
 		(int j := l; j < u; j := j + 1)
 	{
 		if (a[j] <= pv) {
@@ -74,7 +85,7 @@ qs partition(int[] a_0, int l, int u) {
 			eq(a_0,rv,0,l-1) && eq(a_0,rv,u+1,|rv|-1) &&
 			partitioned(rv, 0, l - 1, l, u) &&
       partitioned(rv, l, u, u + 1, |a_0| - 1)
-# (u - l + 1)
+# (u - l + 1, 3)
 int[] qsort(int[] a_0, int l, int u) {
 	if (l >= u) 
 		return a_0;
@@ -89,6 +100,7 @@ int[] qsort(int[] a_0, int l, int u) {
 
 @pre  true
 @post sorted(rv, 0, |rv| - 1)
+# (|a|, 4)
 int[] QuickSort(int[] a)
 {
 	return qsort(a, 0, |a| - 1);
