@@ -28,6 +28,7 @@ def test():
     table.field_names = ["Category",
                          "Consistent cases", "Total cases", "Score"]
 
+    total_score = 0
     with open(os.path.join("testcases", "answers.json"), "r") as f:
         categories = json.load(f)
         for category in categories:
@@ -43,6 +44,7 @@ def test():
             total = len(category["verified_cases"]) + \
                 len(category["unverified_cases"])
             score += sum / total * category["score"]
+            total_score += category["score"]
 
             # 放到表格里
             table.add_row([category["name"], sum, total,
@@ -54,7 +56,7 @@ def test():
     # 把表格打印出来
     print(table)
 
-    print('Your total score is: {:.1f}'.format(score))
+    print('Your total score coverage is: {:.1f}'.format(score/total_score))
 
     return score
 
