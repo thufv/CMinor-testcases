@@ -56,7 +56,7 @@ def test():
     # 把表格打印出来
     print(table)
 
-    print('Your total score coverage is: {:.1f}'.format(score/total_score))
+    print('Your total score coverage is: {:.1f} %'.format(score/total_score * 100))
 
     return score
 
