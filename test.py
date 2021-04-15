@@ -19,8 +19,8 @@ def run_and_check(filepath: str, answer: str) -> bool:
 
 
 def test():
-    # 先编译
-    subprocess.run(["dotnet", "build"], check=True)
+    # 先编译，[抛弃，交给CI的前一个阶段]
+    # subprocess.run(["dotnet", "build"], check=True) 
 
     # 初始化
     score = 0
