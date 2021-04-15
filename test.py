@@ -54,6 +54,8 @@ def test():
     # 把表格打印出来
     print(table)
 
+    print('Your total score is: {:.1f}'.format(score))
+
     return score
 
 
