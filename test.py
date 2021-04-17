@@ -15,10 +15,6 @@ from termcolor import colored
 # 返回的是一个 (得分，总分) 的二元组
 # 得分和总分都是直接是总评中的分数，不折分
 def test():
-    # 先编译
-    # 如果编译失败，会直接报一个 CalledProcessError 出来
-    subprocess.run(["dotnet", "build"], check=True)
-
     # 说明一下颜色的含义
     print("""
 The color indicates your correctness:
@@ -132,4 +128,8 @@ The color indicates your correctness:
 
 
 if __name__ == "__main__":
+    # 如果是在 CI 中，build 会被放在前一个阶段
+    # 但如果是单独运行的话，最好还是在测试之前先 build 一下
+    subprocess.run(["dotnet", "build"], check=True)
+
     test()
