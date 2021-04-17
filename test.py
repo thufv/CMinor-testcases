@@ -63,7 +63,7 @@ The color indicates your correctness:
 
             # 如果一切正常，那么就来比较输出
             out = cp.stdout.decode("utf-8").strip()
-            if out.endswith("VERIFIED"):
+            if out.endswith("\nVERIFIED"):
                 if answer == "VERIFIED":
                     # 答案正确用绿色
                     color = "green"
@@ -74,7 +74,7 @@ The color indicates your correctness:
                     color = "red"
                     count["incorrect"] = count["incorrect"] + 1
                 print(colored("VERIFIED", color), end=' ')
-            elif out.endswith("UNVERIFIED"):
+            elif out.endswith("\nUNVERIFIED"):
                 if answer == "VERIFIED":
                     # 答案错误用红色
                     color = "red"
