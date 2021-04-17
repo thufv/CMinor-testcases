@@ -1,0 +1,137 @@
+[
+    {
+        "filename": "trivial.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "trivial1.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "array_length.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "array_length1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "array_length2.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "array_length3.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "break_loop_invariant.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "break_loop_invariant1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "break_loop_invariant2.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "infinite_partial_correctness.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "length_ge_0.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "new_and_length.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "same_name_in_both_hands.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "same_name_in_both_hands1.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "struct.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "struct1.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "struct2.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "update_parameter.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "update_parameter1.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "fn_return_var_naming.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "crazy_long.pi",
+        "answer": "",
+        "timeout": 10
+    },
+    {
+        "filename": "new_array_var_naming.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Abs.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Abs-correctness.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Ackermann.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "BinarySearch.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "BinarySearch-correctness.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+]

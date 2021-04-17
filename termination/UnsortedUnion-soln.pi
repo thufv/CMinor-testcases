@@ -1,4 +1,4 @@
-@pre  true
+@pre |a| >= 0 && |b| >= 0
 @post ((exists ix. (0 <= ix && ix <= |a| - 1 && a[ix] = 1)
            || exists ix. (0 <= ix && ix <= |b| - 1 && b[ix] = 1))
           <-> exists ix. (0 <= ix && ix <= |rv| - 1 && rv[ix] = 1))
@@ -8,7 +8,7 @@ int[] union(int[] a, int[] b) {
 	int j := 0;
 
 	for
-		@ j=i && i<=|a| && |u|=|a|+|b| &&
+		@ j=i && i<=|a| && |u|=|a|+|b| && |a| >= 0 && |b| >= 0 &&
 			((exists ix. (0 <= ix && ix <= i - 1 && a[ix] = 1)
           <-> exists ix. (0 <= ix && ix <= i - 1 && u[ix] = 1))) &&
       i >= 0
@@ -19,7 +19,7 @@ int[] union(int[] a, int[] b) {
 		j := j + 1;
 	}
 	for
-		@ j=i+|a| && i <= |b| && |u|=|a|+|b| && i>=0 &&
+		@ j=i+|a| && i <= |b| && |u|=|a|+|b| && i>=0 && |a| >= 0 && |b| >= 0 &&
 			(((exists ix. (0 <= ix && ix <= |a| - 1 && a[ix] = 1) ||
 			(exists ix. (0 <= ix && ix <= i - 1 && b[ix] = 1)))
           <-> exists ix. (0 <= ix && ix <= |a| + i - 1 && u[ix] = 1)))

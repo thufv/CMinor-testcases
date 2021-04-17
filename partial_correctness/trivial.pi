@@ -2,16 +2,15 @@
 // A apparently correct program cannot be verified
 
 @pre true
-@post rv = 15
-# (10)
+@post rv = 1
 int fun() {
+    int ans := 1;
     int sum := 0;
     for
-        @ 0 <= i && i < 6
-        # (6 - i)
+        @ true
         (int i := 0; i < 6; i := i + 1)
     {
         sum := sum + i;
     }
-    return sum;
+    return ans;
 }

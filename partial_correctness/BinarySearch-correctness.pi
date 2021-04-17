@@ -1,3 +1,6 @@
+predicate sorted(int[] arr, int low, int high) := 
+  (forall sorted_a,sorted_b. ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) -> arr[sorted_a]<=arr[sorted_b]));
+
 @pre  0 <= l && u < |a| && sorted(a, 0, |a| - 1)
 @post rv <-> exists ix. (l <= ix && ix <= u && a[ix] = e)
 bool BinarySearch(int[] a, int l, int u, int e) {

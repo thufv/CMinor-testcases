@@ -1,13 +1,12 @@
-// A trivial case to show the flaw of the method
-// A apparently correct program cannot be verified
-
 @pre true
 @post rv = 15
-# (3)
+# (10)
 int fun() {
     int sum := 0;
     for
-        @ 0 <= i && i < 6
+        @ 0 <= i && i <= 6 && (
+            0 <= i && i < 6 && sum = i * (i - 1) div 2
+            || i = 6 && sum = 15)
         # (6 - i)
         (int i := 0; i < 6; i := i + 1)
     {

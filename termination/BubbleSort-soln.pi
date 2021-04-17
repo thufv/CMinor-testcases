@@ -4,7 +4,7 @@ predicate sorted(int[] arr, int low, int high) :=
 predicate partitioned(int[] arr, int low1, int high1, int low2, int high2) :=
   (forall partitioned_a, partitioned_b. ((low1 <= partitioned_a && partitioned_a <= high1 && low2 <= partitioned_b && partitioned_b <= high2)-> arr[partitioned_a]<=arr[partitioned_b]));
 
-@pre  true
+@pre |arr_0| >= 0
 @post sorted(rv,0,|rv|-1)
 # (|arr_0| + 1, |arr_0| + 1)
 int[] BubbleSort(int[] arr_0) {
@@ -12,7 +12,7 @@ int[] BubbleSort(int[] arr_0) {
 	for
 	@ 	sorted(arr, i, |arr| - 1) &&
 	   	-1 <= i && i < |arr| &&
-    partitioned(arr, 0, i, i+1, |arr|-1)
+    	partitioned(arr, 0, i, i+1, |arr|-1)
 		# (i + 1, i + 1)
 	(int i := |arr| - 1; i > 0; i := i - 1)
 	{

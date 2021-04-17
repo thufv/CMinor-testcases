@@ -1,7 +1,7 @@
 predicate sorted(int[] arr, int low, int high) := 
   (forall sorted_a,sorted_b. ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) -> arr[sorted_a]<=arr[sorted_b]));
 
-@pre  true
+@pre |a_0| >= 0
 @post sorted(rv, 0, |rv| - 1)
 # (|a_0| + 1, 0)
 int[] InsertionSort(int[] a_0) {

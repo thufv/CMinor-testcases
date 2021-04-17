@@ -21,7 +21,7 @@ int random(int l, int u)
 	return u;
 }
 
-@pre  l<=u && l>=0 && u<|a_0| &&
+@pre  l<=u && l>=0 && u<|a_0| && |a_0| >= 0 &&
 			partitioned(a_0, 0, l - 1, l, u) &&
       partitioned(a_0, l, u, u + 1, |a_0| - 1)
 @post eq(a_0,rv.array,0,l-1) && eq(a_0,rv.array,u+1,|rv.array|-1) &&
@@ -76,7 +76,7 @@ qs partition(int[] a_0, int l, int u) {
 	return tmp;
 }
 
-@pre  l>=0 && u < |a_0| &&
+@pre  l>=0 && u < |a_0| && |a_0| >= 0 &&
 			partitioned(a_0, 0, l - 1, l, u) &&
       partitioned(a_0, l, u, u + 1, |a_0| - 1) &&
       l <= u + 1
@@ -98,7 +98,7 @@ int[] qsort(int[] a_0, int l, int u) {
   }
 }
 
-@pre  true
+@pre |a| >= 0
 @post sorted(rv, 0, |rv| - 1)
 # (|a|, 4)
 int[] QuickSort(int[] a)

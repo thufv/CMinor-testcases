@@ -13,6 +13,6 @@ A fun1() {
 @pre true
 @post rv.x > 0
 A fun() {
-    A a := fun();
+    A a := fun1();
 	return a;
 }

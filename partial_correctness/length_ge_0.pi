@@ -1,6 +1,6 @@
-@pre true
+@pre x >= 0
 @post rv >= 0
 int fun(int x) {
 	int[] a := new int[x];
-	return 0;
+	return |a|;
 }

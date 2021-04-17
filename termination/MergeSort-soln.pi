@@ -3,6 +3,7 @@ predicate sorted(int[] arr, int low, int high) :=
 
 @pre  sorted(a_0, l, m) && sorted(a_0, m + 1, u) && l <= m + 1 && m <= u && |a_0|>u && l>=0 && m>=0 && l>=0
 @post sorted(rv, l, u) && forall ix. (ix < l || ix > u -> rv[ix] = a_0[ix]) && |rv| = |a_0|
+# (3, u - l + 1)
 int[] merge(int[] a_0, int l, int m, int u) {
 	int[] buf := new int[u-l+1];
 	int[] a := a_0;
@@ -53,7 +54,7 @@ int[] merge(int[] a_0, int l, int m, int u) {
 
 @pre  l >= 0 && |a_0| > u && u >= l - 1
 @post sorted(rv, l, u) && |rv| = |a_0| && forall ix. (ix < l || ix > u -> rv[ix] = a_0[ix])
-# (u - l + 1)
+# (4, u - l + 1)
 int[] ms(int[] a_0, int l, int u) {
 	int[] a := a_0;
 	if (l >= u) {
@@ -68,8 +69,9 @@ int[] ms(int[] a_0, int l, int u) {
 	}
 }
 
-@pre  true
+@pre |a| >= 0
 @post sorted(rv, 0, |rv| - 1)
+# (5, |a|)
 int[] MergeSort(int[] a)
 {
 	return ms(a, 0, |a| - 1);

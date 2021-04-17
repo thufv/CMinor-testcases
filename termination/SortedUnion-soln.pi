@@ -3,6 +3,7 @@ predicate sorted(int[] arr, int low, int high) :=
 
 @pre  sorted(a, 0, |a| - 1) 
       && sorted(b, 0, |b| - 1)
+	  && |a| >= 0 && |b| >= 0
 @post sorted(rv, 0, |rv| - 1) 
       && ((exists ix. (0 <= ix && ix <= |a| - 1 && a[ix] = 1)
            || exists ix. (0 <= ix && ix <= |b| - 1 && b[ix] = 1))

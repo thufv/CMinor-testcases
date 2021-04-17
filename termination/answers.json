@@ -1,0 +1,62 @@
+[
+    {
+        "filename": "trivial1.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "infinite_partial_correctness.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Abs-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Abs-termination.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "BubbleSort-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "InsertionSort-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "LinearSearch-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "Max-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "MergeSort-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "QuickSort-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "SortedUnion-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "UnsortedUnion-soln.pi",
+        "answer": "VERIFIED",
+        "timeout": 10
+    }
+]
