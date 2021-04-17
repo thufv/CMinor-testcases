@@ -1,7 +1,25 @@
-## pi test cases
+## 测例
 
-这个是 pi 的测例仓库。
+这个是 pi 这个 verifying compiler 的测例仓库。
 
-目前还没有测试脚本和标准答案，别打我别打我，之后会补的。。。。。。。。
+所有的测例分为 partial correctness 和 termination 两大类，分别放在两个文件夹下面。
 
-现在需要手动逐文件测试，并且需要通过人脑判断标准答案。
+每个文件夹里有一个 `answers.json`，是这个文件夹里所有测例的答案，其格式如下
+
+```json
+[
+    {
+        "filename": <filename>,
+        "answer": "VERIFIED" or "UNVERIFIED",
+        "timeout": <time> (seconds)
+    },
+    ...
+]
+```
+
+## 安装
+
+Python >= 3.8
+
+```bash
+```

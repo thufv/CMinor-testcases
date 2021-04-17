@@ -7,54 +7,128 @@
 import os
 import subprocess
 import json
-from prettytable import PrettyTable
+
+import timeit
+from termcolor import colored
 
 
-def run_and_check(filepath: str, answer: str) -> bool:
-    assert filepath.endswith(".pi")
-    assert os.path.exists(filepath)
-    cp = subprocess.run(["dotnet", "run", "--no-build", "--",
-                         "--source", filepath], check=True, capture_output=True)
-    return cp.stdout.decode("utf-8").strip().endswith("VERIFIED")
-
-
+# 返回的是一个 (得分，总分) 的二元组
+# 得分和总分都是直接是总评中的分数，不折分
 def test():
     # 先编译
+    # 如果编译失败，会直接报一个 CalledProcessError 出来
     subprocess.run(["dotnet", "build"], check=True)
 
-    # 初始化
-    score = 0
-    table = PrettyTable()
-    table.field_names = ["Category",
-                         "Consistent cases", "Total cases", "Score"]
+    # 说明一下颜色的含义
+    print("""
+The color indicates your correctness:
+  {} means your output is correct, aka, the same as the answer.
+  {} means your ouput is UNKNOWN.
+  {} means your output is incorrect, aka, at the opposite of the answer.
+  {} means yours runs out of time or raises some error.
 
-    with open(os.path.join("testcases", "answers.json"), "r") as f:
-        categories = json.load(f)
-        for category in categories:
-            sum = 0
-            for filepath in category["verified_cases"]:
-                if run_and_check(os.path.join("testcases", filepath), "VERIFIED"):
-                    sum += 1
-            for filepath in category["unverified_cases"]:
-                if run_and_check(os.path.join("testcases", filepath), "UNVERIFIED"):
-                    sum += 1
+""".format(colored("Green", "green"), colored("Cyan", "cyan"), colored("Red", "red"), colored("Yellow", "yellow")))
 
-            # 计算分数
-            total = len(category["verified_cases"]) + \
-                len(category["unverified_cases"])
-            score += sum / total * category["score"]
+    score_sum = 0
+    total_score_sum = 0
 
-            # 放到表格里
-            table.add_row([category["name"], sum, total,
-                           "{:.1f} ({})".format(score, category["score"])])
+    for category, total_score in [("partial_correctness", 21 * 0.8), ("termination", 3 * 0.8)]:
+        print("==========", category.upper(), "==========")
 
-    # 把最终的结果也放进表里
-    table.add_row(["TOTAL", "", "", score])
+        # 初始化
+        d = os.path.join(os.path.dirname(__file__), category)
+        count = {
+            "correct": 0,
+            "unknown": 0,
+            "timeout": 0,
+            "error": 0,
+            "incorrect": 0
+        }
 
-    # 把表格打印出来
-    print(table)
+        # 跑起来！并且对输出进行检验
+        def run_and_check(filepath: str, answer: str, timeout: int):
+            try:
+                cp = subprocess.run(["dotnet", "run", "--no-build", "--",
+                                     "--source", filepath], check=True, capture_output=True, timeout=timeout)
+            except subprocess.TimeoutExpired as e:
+                # timeout 用黄色
+                print(colored("TIMEOUT", "yellow"), end=' ')
+                count["timeout"] = count["timeout"] + 1
+                return
+            except:
+                # error 也用黄色
+                print(colored("ERROR", "yellow"), end=' ')
+                count["error"] = count["error"] + 1
+                raise
 
-    return score
+            # 如果一切正常，那么就来比较输出
+            out = cp.stdout.decode("utf-8").strip()
+            if out.endswith("VERIFIED"):
+                if answer == "VERIFIED":
+                    # 答案正确用绿色
+                    color = "green"
+                    count["correct"] = count["correct"] + 1
+                else:
+                    # 答案错误用红色
+                    assert answer == "UNVERIFIED"
+                    color = "red"
+                    count["incorrect"] = count["incorrect"] + 1
+                print(colored("VERIFIED", color), end=' ')
+            elif out.endswith("UNVERIFIED"):
+                if answer == "VERIFIED":
+                    # 答案错误用红色
+                    color = "red"
+                    count["incorrect"] = count["incorrect"] + 1
+                else:
+                    # 答案正确用绿色
+                    assert answer == "VERIFIED"
+                    color = "green"
+                    count["correct"] = count["correct"] + 1
+                print(colored("UNVERIFIED", color), end=' ')
+            else:
+                # 以 UNKNOWN 或者其他奇奇怪怪的输出结尾的话，
+                # 也都算作 UNKNOWN
+                count["unknown"] = count["unknown"] + 1
+
+                print(colored("UNKNOWN", "cyan"), end=' ')
+
+        # 遍历每个 testcase
+        with open(os.path.join(d, "answers.json"), "r") as f:
+            testcases = json.load(f)
+            for testcase in testcases:
+                # 计算出 filepath 并检验其合法性
+                filepath = os.path.join(d, testcase["filename"])
+                assert filepath.endswith(".pi")
+                assert os.path.exists(filepath)
+
+                print(os.path.join(category, testcase["filename"]) + " ", end="")
+
+                # 无论结果如何，也要把消耗的时间打印出来
+                time = timeit.timeit(
+                    stmt='run_and_check(filepath, testcase["answer"], testcase["timeout"])',
+                    globals=locals(),
+                    number=1)
+                print("{:.2f}s".format(time))
+
+        # 计算最终的得分
+        print("")
+        print("{} testcases are correct.".format(count["correct"]))
+        print("{} testcases unknow the reults.".format(count["unknown"]))
+        print("{} testcases run out of time.".format(count["timeout"]))
+        print("{} testcases report an error.".format(count["error"]))
+        print("{} testcases are incorrect.".format(count["incorrect"]))
+        print("")
+
+        score = max((count["correct"] - 2 * count["incorrect"]) / sum(count.values()) * total_score, 0)
+        print("You've got {:.2f} out of {:.2f} scores.".format(score, total_score))
+        
+        score_sum += score
+        total_score_sum += total_score
+        
+        # 美观起见，我们再空一行
+        print("")
+
+    return (score_sum, total_score_sum)
 
 
 if __name__ == "__main__":
