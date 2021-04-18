@@ -1,62 +1,54 @@
 [
     {
         "filename": "trivial1.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "infinite_partial_correctness.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "Abs-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "Abs-termination.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "BubbleSort-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "InsertionSort-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "LinearSearch-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "Max-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "MergeSort-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "QuickSort-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "SortedUnion-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "UnsortedUnion-soln.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "length_and_termination.pi",
+        "answer": "VERIFIED"
     }
 ]
