@@ -1,7 +1,0 @@
-@pre true
-@post true
-void foo() {
-	int[] a;
-	int x := |a|;
-	x := |x|;  // bad
-}

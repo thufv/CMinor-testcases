@@ -129,10 +129,52 @@
     },
     {
         "filename": "array_updates.pi",
-        "answer": "VERIFIED"
+        "answer": "VERIFIED",
+        "timeout": 300
     },
     {
         "filename": "array_updates1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 300
+    },
+    {
+        "filename": "div_by_zero.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "div.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "div1.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "div2.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "DivMod.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "double_predicates.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "float.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "length_pred.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "mod.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "mod1.pi",
         "answer": "UNVERIFIED"
     }
 ]
