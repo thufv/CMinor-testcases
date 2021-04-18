@@ -139,11 +139,11 @@
     },
     {
         "filename": "div_by_zero.pi",
-        "answer": "VERIFIED"
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "div.pi",
-        "answer": "VERIFIED"
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "div1.pi",
@@ -176,5 +176,13 @@
     {
         "filename": "mod1.pi",
         "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "nested_function_call.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "non_linear_arithmetic.pi",
+        "answer": "VERIFIED"
     }
 ]
