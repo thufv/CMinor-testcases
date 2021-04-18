@@ -20,8 +20,18 @@
         "timeout": 10
     },
     {
+        "filename": "Abs-termination1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
         "filename": "BubbleSort-soln.pi",
         "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "BubbleSort-soln1.pi",
+        "answer": "UNVERIFIED",
         "timeout": 10
     },
     {
@@ -30,8 +40,18 @@
         "timeout": 10
     },
     {
+        "filename": "InsertionSort-soln1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
         "filename": "LinearSearch-soln.pi",
         "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "LinearSearch-soln1.pi",
+        "answer": "UNVERIFIED",
         "timeout": 10
     },
     {
@@ -40,8 +60,18 @@
         "timeout": 10
     },
     {
+        "filename": "Max-soln1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
         "filename": "MergeSort-soln.pi",
         "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "MergeSort-soln1.pi",
+        "answer": "UNVERIFIED",
         "timeout": 10
     },
     {
@@ -50,13 +80,28 @@
         "timeout": 10
     },
     {
+        "filename": "QuickSort-soln1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
         "filename": "SortedUnion-soln.pi",
         "answer": "VERIFIED",
         "timeout": 10
     },
     {
+        "filename": "SortedUnion-soln1.pi",
+        "answer": "UNVERIFIED",
+        "timeout": 10
+    },
+    {
         "filename": "UnsortedUnion-soln.pi",
         "answer": "VERIFIED",
+        "timeout": 10
+    },
+    {
+        "filename": "UnsortedUnion-soln1.pi",
+        "answer": "UNVERIFIED",
         "timeout": 10
     }
 ]
