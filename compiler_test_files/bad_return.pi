@@ -1,6 +1,0 @@
-@pre true
-@post true
-int foo() {
-	float x;
-	return x;  // bad
-}

@@ -16,7 +16,7 @@ int[] InsertionSort(int[] a_0) {
 		int j;
 		for
 			@ sorted(a, 0, i - 1)
-			  //&& forall ix. (j < ix && ix < i -> a[ix] > t)
+			  && forall ix. (j < ix && ix < i -> a[ix] > t)
 			  && (j < i - 1 -> sorted(a, 0, i))
 			  && j < i
 			  && 1 <= i && i < |a| && j >= -1

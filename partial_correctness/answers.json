@@ -1,137 +1,142 @@
 [
     {
         "filename": "trivial.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "trivial1.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "array_length.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "array_length1.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "array_length2.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "array_length3.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "array_length4.pi",
+        "answer": "VERIFIED"
     },
     {
         "filename": "break_loop_invariant.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "break_loop_invariant1.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "break_loop_invariant2.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "infinite_partial_correctness.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "length_ge_0.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "new_and_length.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "same_name_in_both_hands.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "same_name_in_both_hands1.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "struct.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "struct1.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "struct2.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "update_parameter.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "update_parameter1.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "fn_return_var_naming.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "crazy_long.pi",
-        "answer": "",
-        "timeout": 10
+        "answer": ""
     },
     {
         "filename": "new_array_var_naming.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "Abs.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "Abs-correctness.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "Ackermann.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
     {
         "filename": "BinarySearch.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 10
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "BinarySearch-correctness.pi",
-        "answer": "VERIFIED",
-        "timeout": 10
+        "answer": "VERIFIED"
     },
+    {
+        "filename": "negative_array_index.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "negative_array_index1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "predicates.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "predicates1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "vc_empty_bp.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "array_updates.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "array_updates1.pi",
+        "answer": "UNVERIFIED"
+    }
 ]

@@ -1,5 +1,0 @@
-@pre true
-@post true
-int foobar() {
-	float x;
-}  // bad (no return)

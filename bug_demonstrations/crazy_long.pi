@@ -1,7 +1,7 @@
 predicate sorted(int[] arr, int low, int high) := 
   (forall sorted_a,sorted_b. ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) -> arr[sorted_a]<=arr[sorted_b]));
 
-@pre  u + 1 > l && sorted(a_0,l,m) && sorted(a_0,m+1,u) && m >= l && m <= u && l >= 0 && |a_0| > 0 && u < |a_0|
+@pre |a_0| >= 0 && u + 1 > l && sorted(a_0,l,m) && sorted(a_0,m+1,u) && m >= l && m <= u && l >= 0 && |a_0| > 0 && u < |a_0|
 @post sorted(rv,l,u) && |rv| = |a_0| && forall ax. (ax >= 0 && ax < l || ax > u && ax < |a_0| -> a_0[ax] = rv[ax])
 int[] merge(int[] a_0, int l, int m, int u) {
        int[] buf := new int[u-l+1];
@@ -9,7 +9,7 @@ int[] merge(int[] a_0, int l, int m, int u) {
        int i := l;
        int j := m + 1;
        for
-               @ 0 <= k && k <= |buf| && (k = 0 || sorted(buf,0,k-1)) && sorted(a_0,l,m) &&
+               @ 0 <= k && k <= |buf| && (k = 0 || sorted(buf,0,k-1)) && sorted(a_0,l,m) && |buf| >= 0 && |a| >= 0 &&
                sorted(a_0,m+1,u) && k <= u - l + 1 && |buf| = u - l + 1 && m >= l && l >= 0 &&
                m <= u && j > m && u < |a| && j <= |a_0| && i <= |a_0| && i >= l && j >= 0 && |a_0| = |a| && m < |a_0| &&
                forall bufx, a0x. (bufx >= 0 && bufx < k && a0x >= j && a0x <= u -> buf[bufx] <= a_0[a0x]) &&
@@ -40,7 +40,7 @@ int[] merge(int[] a_0, int l, int m, int u) {
                }
        }
        for
-               @ k >= 0 && k <= |buf| && sorted(buf,0,|buf|-1) && sorted(a,l,l + k - 1) && |buf| = u - l + 1 && l >=0 && u >= 0 && u - l + 1 > 0 && |a| = |a_0| && forall ax. (ax >= 0 && ax < l || ax > u && ax < |a_0| -> a_0[ax] = a[ax]) && (k > 0 && (a[l + k - 1] = buf[k - 1]) || k = 0)
+               @ k >= 0 && k <= |buf| && sorted(buf,0,|buf|-1) && sorted(a,l,l + k - 1) && |buf| = u - l + 1 && l >=0 && u >= 0 && u - l + 1 > 0 && |a| = |a_0| && forall ax. (ax >= 0 && ax < l || ax > u && ax < |a_0| -> a_0[ax] = a[ax]) && (k > 0 && (a[l + k - 1] = buf[k - 1]) || k = 0) && |buf| >= 0 && |a| >= 0
                (int k := 0; k < u - l + 1; k := k + 1)
        {
                a[l + k] := buf[k];
@@ -49,7 +49,7 @@ int[] merge(int[] a_0, int l, int m, int u) {
        return a;
 }
 
-@pre  l + u >= 0 && u < |a_0| && |a_0| >= 0 && l >= 0
+@pre  l + u >= 0 && u < |a_0| && |a_0| >= 0 && l >= 0 && |a_0| >= 0
 @post sorted(rv,l,u) && |rv| = |a_0| && forall ax. (ax >= 0 && ax < l || ax > u && ax < |a_0| -> a_0[ax] = rv[ax])
 int[] ms(int[] a_0, int l, int u) {
        int[] a := a_0;

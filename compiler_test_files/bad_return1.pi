@@ -1,6 +1,0 @@
-@pre true
-@post true
-void bar() {
-	int x;
-	return x;  // bad
-}
