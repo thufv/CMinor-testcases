@@ -77,7 +77,7 @@ The color indicates your correctness:
                     count["incorrect"] = count["incorrect"] + 1
                 else:
                     # 答案正确用绿色
-                    assert answer == "VERIFIED"
+                    assert answer == "UNVERIFIED"
                     color = "green"
                     count["correct"] = count["correct"] + 1
                 print(colored("UNVERIFIED", color), end=' ')
@@ -104,7 +104,7 @@ The color indicates your correctness:
 
                 # 无论结果如何，也要把消耗的时间打印出来
                 time = timeit.timeit(
-                    stmt='run_and_check(filepath, testcase["answer"], testcase["timeout"])',
+                    stmt='run_and_check(filepath, testcase["answer"], timeout)',
                     globals=locals(),
                     number=1)
                 print("{:.2f}s".format(time))
