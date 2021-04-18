@@ -2,7 +2,7 @@ import os
 import json
 from termcolor import colored
 
-category = ['partial_correctness', 'termination']
+category = ['partial_correctness', 'total_correctness']
 
 for cat in category:
   p = os.path.join(os.path.dirname(__file__), cat)

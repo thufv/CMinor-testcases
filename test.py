@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # 使用方式：./test.py
-# 这个脚本应该在 piVC-thu 这个项目的根目录下运行
+# 这个脚本应该在你的完整的 verifying compiler 项目的根目录下运行
 
 import os
 import subprocess
@@ -28,7 +28,7 @@ The color indicates your correctness:
     score_sum = 0
     total_score_sum = 0
 
-    for category, total_score in [("partial_correctness", 21 * 0.8), ("termination", 3 * 0.8)]:
+    for category, total_score in [("partial_correctness", 21 * 0.8), ("total_correctness", 3 * 0.8)]:
         print("==========", category.upper(), "==========")
 
         # 初始化
