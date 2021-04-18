@@ -99,6 +99,9 @@ The color indicates your correctness:
 
                 print(os.path.join(category, testcase["filename"]) + " ", end="")
 
+                # 默认值为 10s
+                timeout = testcase["timeout"] if "timeout" in testcase else 10
+
                 # 无论结果如何，也要把消耗的时间打印出来
                 time = timeit.timeit(
                     stmt='run_and_check(filepath, testcase["answer"], testcase["timeout"])',
