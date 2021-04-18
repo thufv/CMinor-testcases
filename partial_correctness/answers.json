@@ -183,6 +183,18 @@
     },
     {
         "filename": "non_linear_arithmetic.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "path_with_call.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "two_level_predicates.pi",
+        "answer": "VERIFIED"
+    },
+    {
+        "filename": "union.pi",
+        "answer": "UNVERIFIED"
     }
 ]

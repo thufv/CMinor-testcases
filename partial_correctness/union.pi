@@ -14,8 +14,8 @@ int[] union(int[] a, int[] b) {
     int j := 0;
 
     for
-            @ 0 <= i && i <= |a| && 0 <= j && j <= |u| && j = i && |a| <= |u| &&
-                (i > 0 && j > 0 && a[i - 1] = u[j - 1]
+            @ |a| >= 0 && |b| >= 0 && j >= 0 &&
+                (i > 0 && j > 0 && a[i-1] = u[j-1]
                 -> (exists ix. (0 <= ix && ix <= i - 1 && a[ix] = 1)
                   <-> exists ix. (0 <= ix && ix <= j - 1 && u[ix] = 1)))
             (int i := 0; i < |a|; i := i + 1)

@@ -1,6 +1,0 @@
-@pre rv = 1
-@post true
-int fun()
-{
-	return 1;
-}

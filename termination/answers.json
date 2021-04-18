@@ -50,5 +50,9 @@
     {
         "filename": "length_and_termination.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "termination_example2.pi",
+        "answer": "VERIFIED"
     }
 ]
