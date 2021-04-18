@@ -55,7 +55,7 @@ The color indicates your correctness:
                 # error 也用黄色
                 print(colored("ERROR", "yellow"), end=' ')
                 count["error"] = count["error"] + 1
-                raise
+                return
 
             # 如果一切正常，那么就来比较输出
             out = cp.stdout.decode("utf-8").strip()
