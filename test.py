@@ -133,6 +133,6 @@ The color indicates your correctness:
 if __name__ == "__main__":
     # 如果是在 CI 中，build 会被放在前一个阶段
     # 但如果是单独运行的话，最好还是在测试之前先 build 一下
-    subprocess.run(["dotnet", "build", "-c", "Release"], check=True)
+    # subprocess.run(["dotnet", "build", "-c", "Release"], check=True)
 
     test()
