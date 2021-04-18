@@ -16,36 +16,72 @@
         "answer": "VERIFIED"
     },
     {
+        "filename": "Abs-termination1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
         "filename": "BubbleSort-soln.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "BubbleSort-soln1.pi",
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "InsertionSort-soln.pi",
         "answer": "VERIFIED"
     },
     {
+        "filename": "InsertionSort-soln1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
         "filename": "LinearSearch-soln.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "LinearSearch-soln1.pi",
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "Max-soln.pi",
         "answer": "VERIFIED"
     },
     {
+        "filename": "Max-soln1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
         "filename": "MergeSort-soln.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "MergeSort-soln1.pi",
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "QuickSort-soln.pi",
         "answer": "VERIFIED"
     },
     {
+        "filename": "QuickSort-soln1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
         "filename": "SortedUnion-soln.pi",
         "answer": "VERIFIED"
     },
     {
+        "filename": "SortedUnion-soln1.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
         "filename": "UnsortedUnion-soln.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "UnsortedUnion-soln1.pi",
+        "answer": "UNVERIFIED"
     },
     {
         "filename": "length_and_termination.pi",
