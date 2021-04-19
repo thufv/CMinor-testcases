@@ -17,9 +17,9 @@
 ]
 ```
 
-通过测例占总评的 24 分，其中公开测例占 17。
+## 评测脚本
 
-## 安装
+你可以对每个测例单独测试及调试，也可以使用我们提供的评测脚本。
 
 需要 Python >= 3.8
 
@@ -27,6 +27,9 @@
 pip3 install -r requirements.txt
 ```
 
-## 使用
+在 VC 根目录下，使用
 
-可以对每个测例进行独立的评测，也可以。
+```bash
+dotnet build
+python3 testcases/test.py
+```
