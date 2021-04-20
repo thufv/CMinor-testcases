@@ -21,15 +21,15 @@
 
 你可以对每个测例单独测试及调试，也可以使用我们提供的评测脚本。
 
-需要 Python >= 3.8
+需要 Python >= 3.8，并安装所需的包：
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-在 VC 根目录下，使用
+在 Veryfing Compiler 的根目录下，使用：
 
 ```bash
-dotnet build
-python3 testcases/test.py
+dotnet build # 编译
+python3 testcases/test.py # 统一评测所有测例
 ```

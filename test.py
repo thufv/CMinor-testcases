@@ -59,7 +59,7 @@ The color indicates your correctness:
 
             # 如果一切正常，那么就来比较输出
             out = cp.stdout.decode("utf-8").strip()
-            if out.endswith("\nVERIFIED"):
+            if out == "VERIFIED" or out.endswith("\nVERIFIED"):
                 if answer == "VERIFIED":
                     # 答案正确用绿色
                     color = "green"
@@ -70,7 +70,7 @@ The color indicates your correctness:
                     color = "red"
                     count["incorrect"] = count["incorrect"] + 1
                 print(colored("VERIFIED", color), end=' ')
-            elif out.endswith("\nUNVERIFIED"):
+            elif out == "UNVERIFIED" or out.endswith("\nUNVERIFIED"):
                 if answer == "VERIFIED":
                     # 答案错误用红色
                     color = "red"
@@ -97,7 +97,8 @@ The color indicates your correctness:
                 assert filepath.endswith(".pi")
                 assert os.path.exists(filepath)
 
-                print(os.path.join(category, testcase["filename"]) + " ", end="")
+                print(os.path.join(
+                    category, testcase["filename"]) + " ", end="")
 
                 # 默认值为 10s
                 timeout = testcase["timeout"] if "timeout" in testcase else 10
@@ -118,12 +119,14 @@ The color indicates your correctness:
         print("{} testcases are incorrect.".format(count["incorrect"]))
         print("")
 
-        score = max((count["correct"] - 2 * count["incorrect"]) / sum(count.values()) * total_score, 0)
-        print("You've got {:.2f} out of {:.2f} scores.".format(score, total_score))
-        
+        score = max((count["correct"] - 2 * count["incorrect"]
+                     ) / sum(count.values()) * total_score, 0)
+        print("You've got {:.2f} out of {:.2f} scores.".format(
+            score, total_score))
+
         score_sum += score
         total_score_sum += total_score
-        
+
         # 美观起见，我们再空一行
         print("")
 
