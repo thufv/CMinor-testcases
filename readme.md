@@ -30,7 +30,7 @@ pip3 install -r requirements.txt
 在 Veryfing Compiler 的根目录下，使用：
 
 ```bash
-dotnet build # 编译
+dotnet build -c Release # 编译
 python3 testcases/test.py # 统一评测所有测例
 ```
 
