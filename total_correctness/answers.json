@@ -90,5 +90,13 @@
     {
         "filename": "termination_example2.pi",
         "answer": "VERIFIED"
+    },
+    {
+        "filename": "negative_ranking_function.pi",
+        "answer": "UNVERIFIED"
+    },
+    {
+        "filename": "infinite_descending_ranking_function.pi",
+        "answer": "UNVERIFIED"
     }
 ]
