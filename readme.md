@@ -1,6 +1,6 @@
 ## 测例
 
-这个是 pi 这个 verifying compiler 的公开测例仓库。
+这个是清华版的 pi 的 verifying compiler 的公开测例仓库。
 
 所有的公开测例分为 partial correctness 和 total_correctness 两大类，分别放在两个文件夹下面。
 
@@ -27,7 +27,7 @@
 pip3 install -r requirements.txt
 ```
 
-在 Veryfing Compiler 的根目录下，使用：
+在 veryfing compiler 的根目录下，使用：
 
 ```bash
 dotnet build -c Release # 编译
