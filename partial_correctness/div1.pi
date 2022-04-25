@@ -1,9 +1,10 @@
-@pre true
-@post true
+/*@
+ * requires \true;
+ * ensures \true;
+ */
 void foo() {
-	// Correct behavior
-	int val := 3 div 2;
-	@ val = 1;
-	float val2 := 3.0 / 2.0;
-	@ val2 = 1.5;
+	int val = 3 / 2;
+	//@ assert val == 1;
+	float val2 = 3.0 / 2.0;
+	//@ assert val2 == 1.5;
 }

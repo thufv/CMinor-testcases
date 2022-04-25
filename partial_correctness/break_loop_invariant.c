@@ -12,7 +12,7 @@ int fun()
 	  (int i = 0; i < 10; i = i + 1)
 	{
 		sum = sum + i;
-		if (i = 5) break;
+		if (i = 9) break;
   }
 	return sum;
 }

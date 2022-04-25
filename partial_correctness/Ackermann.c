@@ -1,5 +1,7 @@
-@pre  true
-@post true
+/*@
+ * requires x>=0 && y>=0;
+ * ensures \result >= 0;
+ */
 int ack(int x, int y) {
 	if (x = 0)
 		return y + 1;

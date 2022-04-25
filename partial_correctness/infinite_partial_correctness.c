@@ -1,9 +1,10 @@
 // A program that won't terminate
 // However, it's partial correctness can be verified.
 
-@pre true
-@post rv > 0
+/*@
+ * requires \true;
+ * ensures \result > 0;
+ */
 int fun() {
     return fun();
 }
-

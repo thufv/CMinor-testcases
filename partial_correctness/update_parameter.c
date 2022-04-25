@@ -11,6 +11,6 @@ int fun1(int x) {
  * ensures \result == x;
  */
 int fun(int x) {
-	if (true) x = x;
+	if (true) x = 2;
 	return fun1(fun1(fun1(x)));
 }

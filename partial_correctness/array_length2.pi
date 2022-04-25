@@ -1,6 +1,7 @@
-@pre true
-@post |rv { 0 <- |rv|}| > 1
+/*@
+ * ensures \valid({\result \with [ 0 ] = 5}+(0..1));
+ */
 int[] fun() {
-	int[] a := new int[5];
+	int[5] a;
 	return a;
 }

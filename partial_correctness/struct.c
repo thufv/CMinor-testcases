@@ -4,10 +4,10 @@ struct A {
 
 /*
  * requires \true;
- * ensures \result.x > 0;
+ * ensures \result > 0;
  */
 int fun() {
 	A a;
-	a.x = 1;
+	a.x = 2;
 	return a.x;
 }

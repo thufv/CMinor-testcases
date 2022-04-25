@@ -1,12 +1,14 @@
-@pre true
-@post rv = 15
+/*@
+ * requires \true;
+ * ensures \result == 15;
+ */
 int fun() {
-    int sum := 0;
+    int sum = 0;
+    //@ loop invariant 0 <= i && i < 6 && sum == i * (i - 1) div 2 || i == 6 && sum == 15;
     for
-        @ 0 <= i && i < 6 && sum = i * (i - 1) div 2 || i = 6 && sum = 15
-        (int i := 0; i < 6; i := i + 1)
+        (int i = 0; i < 6; i = i + 1)
     {
-        sum := sum + i;
+        sum = sum + i;
     }
-    return sum;
+    return ans;
 }

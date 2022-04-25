@@ -1,5 +1,0 @@
-predicate l(int[] arr) := |arr| = 42;
-
-@pre l(arr)
-@post true
-void main(int[] arr) {}
