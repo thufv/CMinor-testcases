@@ -9,7 +9,7 @@ for cat in category:
 
   with open(os.path.join(p, 'answers.json')) as f:
     j = json.load(f)
-    filename_in_json = set(map(lambda x: x['filename'], j))
+    filename_in_json = j.keys()
     filename_in_dir = set(filter(lambda x: x[-3:] == '.pi', os.listdir(p)))
     
     if filename_in_dir != filename_in_json:

@@ -1,200 +1,31 @@
-[
-    {
-        "filename": "trivial.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "trivial1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "array_length.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "array_length1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "array_length2.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "array_length3.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "array_length4.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "break_loop_invariant.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "break_loop_invariant1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "break_loop_invariant2.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "infinite_partial_correctness.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "length_ge_0.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "new_and_length.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "same_name_in_both_hands.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "same_name_in_both_hands1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "struct.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "struct1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "struct2.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "update_parameter.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "update_parameter1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "fn_return_var_naming.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "new_array_var_naming.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "Abs.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "Abs-correctness.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "Ackermann.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "BinarySearch.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "BinarySearch-correctness.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "negative_array_index.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "negative_array_index1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "predicates.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "predicates1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "vc_empty_bp.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "array_updates.pi",
-        "answer": "VERIFIED",
-        "timeout": 300
-    },
-    {
-        "filename": "array_updates1.pi",
-        "answer": "UNVERIFIED",
-        "timeout": 300
-    },
-    {
-        "filename": "div_by_zero.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "div.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "div1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "div2.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "DivMod.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "double_predicates.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "float.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "length_pred.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "mod.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "mod1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "nested_function_call.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "non_linear_arithmetic.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "path_with_call.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "two_level_predicates.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "union.pi",
-        "answer": "UNVERIFIED"
-    }
-]
+{
+	"Abs-correctness.c": "VERIFIED",
+	"Abs.c": "UNVERIFIED",
+	"Ackermann.c": "VERIFIED",
+	"array_length.c": "VERIFIED",
+	"array_updates.c": "VERIFIED",
+	"BinarySearch-correctness.c": "VERIFIED",
+	"BinarySearch.c": "UNVERIFIED",
+	"break_loop_invariant.c": "VERIFIED",
+	"div.c": "UNVERIFIED",
+	"DivMod.c": "VERIFIED",
+	"div_by_zero.c": "UNVERIFIED",
+	"double_predicates.c": "VERIFIED",
+	"float.c": "VERIFIED",
+	"fn_return_var_naming.c": "UNVERIFIED",
+	"infinite_partial_correctness.c": "VERIFIED",
+	"length_pred.c": "VERIFIED",
+	"mod.c": "VERIFIED",
+	"negative_array_index.c": "VERIFIED",
+	"nested_function_call.c": "VERIFIED",
+	"new_array_var_naming.c": "UNVERIFIED",
+	"non_linear_arithmetic.c": "UNVERIFIED",
+	"path_with_call.c": "VERIFIED",
+	"predicates.c": "VERIFIED",
+	"same_name_in_both_hands.c": "UNVERIFIED",
+	"struct.c": "VERIFIED",
+	"two_level_predicates.c": "VERIFIED",
+	"union.c": "UNVERIFIED",
+	"update_parameter.c": "VERIFIED",
+	"vc_empty_bp.c": "UNVERIFIED"
+}
