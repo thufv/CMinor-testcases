@@ -1,6 +1,0 @@
-@pre x >= 0
-@post rv = x
-int fun(int x) {
-	int[] a := new int[x];
-	return |a|;
-}

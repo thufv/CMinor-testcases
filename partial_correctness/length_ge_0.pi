@@ -1,8 +1,0 @@
-/*@
- * requires x >= 0;
- * ensures \result >= 0;
- */
-int fun(int x) {
-	int[] a = new int[x];
-	return |a|;
-}

@@ -1,7 +1,0 @@
-/*@
- * ensures \valid(\result+(0..10));
- */
-int[] fun() {
-	int[5] a;
-	return a;
-}
