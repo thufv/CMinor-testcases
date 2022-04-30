@@ -27,5 +27,6 @@
 	"two_level_predicates.c": "VERIFIED",
 	"union.c": "UNVERIFIED",
 	"update_parameter.c": "VERIFIED",
-	"vc_empty_bp.c": "UNVERIFIED"
+	"vc_empty_bp.c": "UNVERIFIED",
+	"fun.c": "VERIFIED"
 }
