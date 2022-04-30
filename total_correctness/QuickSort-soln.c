@@ -20,12 +20,14 @@ int random(int l, int u)
   requires  l<=u && l>=0 && u<n && n >= 0 &&
       partitioned(a, 0, l - 1, l, u) &&
       partitioned(a, l, u, u + 1, n - 1);
+  requires \valid(a+(0..n-1));
   ensures
       \result >=l && \result <=u &&
       partitioned(a, l, \result - 1, \result, \result) &&
       partitioned(a, \result, \result, \result + 1, u) &&
       partitioned(a, 0, l - 1, l, u) &&
       partitioned(a, l, u, u + 1, n - 1);
+  ensures \valid(a+(0..n-1));
 */
 int partition(int a[], int n, int l, int u) {
 	int pi = random(l, u);
@@ -71,9 +73,11 @@ int partition(int a[], int n, int l, int u) {
     partitioned(a_0, 0, l - 1, l, u) &&
     partitioned(a_0, l, u, u + 1, n - 1) &&
     l <= u + 1;
+  requires \valid(a_0+(0..n-1));
   ensures sorted(a_0,l,u) &&
         partitioned(a_0, 0, l - 1, l, u) &&
         partitioned(a_0, l, u, u + 1, n - 1);
+  ensures \valid(a_0+(0..n-1));
 */
 void qsort(int a_0[], int n, int l, int u) {
 	if (l >= u)
@@ -88,7 +92,9 @@ void qsort(int a_0[], int n, int l, int u) {
 
 /*@
   requires n >= 0;
+  requires \valid(a+(0..n-1));
   ensures sorted(a, 0, n - 1);
+  ensures \valid(a+(0..n-1));
  */
 void QuickSort(int a[], int n)
 {
