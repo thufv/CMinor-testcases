@@ -1,6 +1,6 @@
 /*@
- * requires \true;
- * ensures \true;
+  requires \true;
+  ensures \true;
  */
 void main() {
 	int x;

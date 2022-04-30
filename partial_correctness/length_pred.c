@@ -1,5 +1,5 @@
 /*
- * requires n == 42;
- * ensures \true;
+  requires n == 42;
+  ensures \true;
  */
-void main(int[] arr, int n) {}
+void main(int arr[], int n) {}

@@ -1,10 +1,10 @@
 /*@
- * predicate a() = \true;
- * predicate b() = a();
+  predicate a(integer i) = \true;
+  predicate b(integer i) = a(i);
  */
 
 /*@
- * requires \true;
- * ensures b();
+  requires \true;
+  ensures b(1);
  */
 void main() {}

@@ -1,7 +1,7 @@
 /*@
- * requires \true;
- * ensures \true;
+  requires \true;
+  ensures \true;
  */
 void foo() {
-	1 / 0 = 1;
+	//@ assert 1 / 0 == 1;
 }

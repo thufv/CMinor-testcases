@@ -1,6 +1,6 @@
 /*@
- * requires \true;
- * ensures \result > x && \result > y;
+  requires \true;
+  ensures \result > x && \result > y;
  */
 int larger(int x, int y) {
 	if (x > y)
@@ -10,8 +10,8 @@ int larger(int x, int y) {
 }
 
 /*@
- * requires \true;
- * ensures \true;
+  requires \true;
+  ensures \true;
  */
 void main(int x) {
 	int y = larger(x, 2 * x);

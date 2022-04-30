@@ -1,6 +1,6 @@
 /*@ 
- * requires x == 1;
- * ensures \result = 2;
+  requires x == 1;
+  ensures \result == 2;
  */
 int fun(int x) {
 	{

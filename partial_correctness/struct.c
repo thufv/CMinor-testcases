@@ -1,13 +1,13 @@
 struct A {
 	int x;
-}
+};
 
-/*
- * requires \true;
- * ensures \result > 0;
+/*@
+  requires \true;
+  ensures \result > 0;
  */
 int fun() {
-	A a;
+	struct A a;
 	a.x = 2;
 	return a.x;
 }
