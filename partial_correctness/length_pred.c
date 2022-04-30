@@ -1,4 +1,4 @@
-/*
+/*@
   requires n == 42;
   ensures \true;
  */

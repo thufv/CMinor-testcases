@@ -1,15 +1,16 @@
 /*@
-  predicate inRange( int target, int arr[], int n, int low, int high ) =
+  predicate inRange(integer target, integer[] arr, integer n, integer low, integer high) =
     ((low <= high && 0 <= low && high <= n - 1) ==>
-    (\exists int ix; (low <= ix && ix <= high && arr[ix] == target)));
-  predicate in(int target, int arr[], int n ) =
-    inRange( target, arr, 0, n - 1 );
+    (\exists integer ix; (low <= ix && ix <= high && arr[ix] == target)));
+
+  predicate in(integer target, integer[] arr, integer n ) =
+    inRange(target, arr, 0, n - 1 );
  */
 
 /*@
   requires \valid(a+(0..n-1));
   requires \valid(b+(0..m-1));
-  requires n >= 0 && m >= 0
+  requires n > 0 && m > 0;
   ensures \valid(\result+(0..n+m-1));
   ensures ((\exists integer ix; (0 <= ix && ix <= n - 1 && a[ix] == 1)
         || \exists integer ix; (0 <= ix && ix <= m - 1 && b[ix] == 1))

@@ -1,7 +1,7 @@
 /*@
   requires \valid(a+(0..n-1));
   requires 0 <= l && u < n;
-  ensures \result <==> \exists int ix; (l <= ix && ix <= u && a[ix] == e);
+  ensures \result == 1 <==> \exists integer ix; (l <= ix && ix <= u && a[ix] == e);
  */
 int BinarySearch(int a[], int n, int l, int u, int e) {
 	if (l > u)
