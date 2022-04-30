@@ -74,6 +74,7 @@ int partition(int a[], int n, int l, int u) {
     partitioned(a_0, l, u, u + 1, n - 1) &&
     l <= u + 1;
   requires \valid(a_0+(0..n-1));
+  decreases u - l;
   ensures sorted(a_0,l,u) &&
         partitioned(a_0, 0, l - 1, l, u) &&
         partitioned(a_0, l, u, u + 1, n - 1);
