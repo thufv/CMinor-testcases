@@ -1,5 +1,6 @@
 /*@
  requires \true;
+ decreases 10;
  ensures \result == 15;
  */
 int fun() {

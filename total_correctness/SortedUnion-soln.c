@@ -3,10 +3,11 @@
   (\forall int sorted_a,sorted_b; ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) ==> arr[sorted_a]<=arr[sorted_b]));
   */
 
-/*
- * requires sorted(a, 0, n - 1)
+/*@
+ requires sorted(a, 0, n - 1)
       && sorted(b, 0, m - 1)
 	  && n >= 0 && m >= 0;
+      decreases n + m + 1;
  ensures sorted(rv, 0, n + m - 1)
       && ((\exists int ix; (0 <= ix && ix <= n - 1 && a[ix] == 1)
            || \exists int ix; (0 <= ix && ix <= m - 1 && b[ix] == 1))

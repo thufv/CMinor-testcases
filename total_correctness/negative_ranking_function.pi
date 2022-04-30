@@ -1,4 +1,0 @@
-@pre true
-@post true
-# (-1)
-void fun() {}

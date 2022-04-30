@@ -8,6 +8,7 @@
 /*@
   requires \valid(arr_0+(0..n-1));
   requires n >= 1;
+  decreases n;
  */
 void BubbleSort(int arr_0[], int n) {
 	/*@

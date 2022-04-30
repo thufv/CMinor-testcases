@@ -1,6 +1,7 @@
 /*@
   requires \valid(x+(0..n-1));
   requires n >= 1;
+  decreases n + 2;
  */
 void foo(int x[], int n) {
     /*@

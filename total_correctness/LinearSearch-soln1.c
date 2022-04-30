@@ -1,6 +1,7 @@
 /*@
     requires n >= 0 && 0 <= l && u < n;
     requires \valid(a+(0..n-1));
+    decreases n + 1;
     ensures \result <==> \exists int ix; (l <= ix && ix <= u && a[ix] == e);
 */
 int LinearSearch(int a[], int n, int l, int u, int e) {

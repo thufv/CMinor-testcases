@@ -2,6 +2,7 @@
 
 /*@
     requires n >= 0;
+    decreases n;
     ensures  \true;
  */
 void foo(int n) {

@@ -9,6 +9,7 @@ predicate partitioned(int* arr, integer low1, integer high1, integer low2, integ
 /*@
   requires l <= u;
   ensures l <= \result && \result <= u;
+  decreases u + 1;
  */
 int random(int l, int u)
 {
@@ -21,6 +22,7 @@ int random(int l, int u)
       partitioned(a, 0, l - 1, l, u) &&
       partitioned(a, l, u, u + 1, n - 1);
   requires \valid(a+(0..n-1));
+  decreases n + 1;
   ensures
       \result >=l && \result <=u &&
       partitioned(a, l, \result - 1, \result, \result) &&
@@ -74,7 +76,7 @@ int partition(int a[], int n, int l, int u) {
     partitioned(a_0, l, u, u + 1, n - 1) &&
     l <= u + 1;
   requires \valid(a_0+(0..n-1));
-  decreases u - l;
+  decreases n + u - l;
   ensures sorted(a_0,l,u) &&
         partitioned(a_0, 0, l - 1, l, u) &&
         partitioned(a_0, l, u, u + 1, n - 1);
@@ -94,6 +96,7 @@ void qsort(int a_0[], int n, int l, int u) {
 /*@
   requires n >= 0;
   requires \valid(a+(0..n-1));
+  decreases 2 * n + 1;
   ensures sorted(a, 0, n - 1);
   ensures \valid(a+(0..n-1));
  */

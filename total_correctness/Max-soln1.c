@@ -1,6 +1,7 @@
 /*@
     requires n > 0;
     requires \valid(arr+(0..n-1));
+    decreases n + 1;
     ensures \forall int ix; (ix >= 0 && ix < n ==> \result >= arr[ix]);
 */
 int max(int arr[], int n) {

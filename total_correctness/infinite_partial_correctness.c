@@ -3,6 +3,7 @@
 
 /*@
   requires \true;
+  decreases 1;
   ensures \result > 0;
 */
 int fun() {

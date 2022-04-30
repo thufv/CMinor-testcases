@@ -2,6 +2,7 @@
   requires \valid(a+(0..n-1));
   requires \valid(b+(0..m-1));
   requires n >= 0 && m >= 0;
+  decreases n + m + 1;
   ensures \valid(u+(0..n+m-1));
   ensures ((\exists int ix; (0 <= ix && ix <= n - 1 && a[ix] == 1)
            || \exists int ix; (0 <= ix && ix <= m - 1 && b[ix] == 1))
@@ -15,7 +16,7 @@ void uni(int a[], int b[], int n, int m, int u[]) {
         ((\exists int ix; (0 <= ix && ix <= i - 1 && a[ix] == 1)
         <==> \exists int ix; (0 <= ix && ix <= i - 1 && u[ix] == 1))) &&
         i >= 0;
-        loop variant n - i;
+        loop variant n + m - i;
     */
 	for (int i = 0; i < n; i = i + 1)
 	{

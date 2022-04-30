@@ -1,3 +1,6 @@
+/*@
+  decreases n + 1;
+ */
 void fun(int n) {
     /*@
         loop variant n;

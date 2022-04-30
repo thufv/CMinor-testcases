@@ -1,6 +1,7 @@
 /*@
   requires \valid(a_0+(0..n-1));
   requires n >= 1;
+  decreases n + 1;
  */
 void abs(int a_0[], int n) {
     /*@
