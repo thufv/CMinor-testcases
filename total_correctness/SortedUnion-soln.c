@@ -1,32 +1,43 @@
 /*@
-  predicate sorted(int* arr, integer low, integer high) = 
-  (\forall int sorted_a,sorted_b; ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) ==> arr[sorted_a]<=arr[sorted_b]));
+  predicate sorted(integer[] arr, integer low, integer high) = 
+  	(\forall integer sorted_a, sorted_b;
+	  	((low <= sorted_a <= sorted_b <= high) ==> arr[sorted_a] <= arr[sorted_b]));
   */
 
 /*@
- requires sorted(a, 0, n - 1)
-      && sorted(b, 0, m - 1)
-	  && n >= 0 && m >= 0;
-      decreases n + m + 1;
- ensures sorted(rv, 0, n + m - 1)
-      && ((\exists int ix; (0 <= ix && ix <= n - 1 && a[ix] == 1)
-           || \exists int ix; (0 <= ix && ix <= m - 1 && b[ix] == 1))
-          <==> \exists int ix; (0 <= ix && ix <= u - 1 && rv[ix] == 1));
+  requires n > 0 && m > 0;
+  requires \valid(a + (0..n-1));
+  requires \valid(b + (0..m-1));
+  requires \valid(u + (0..n+m-1));
+  requires sorted(a, 0, n - 1);
+  requires sorted(b, 0, m - 1);
+  decreases n + m + 1;
+  ensures sorted(u, 0, n + m - 1);
+  ensures (\exists integer ix; (0 <= ix <= n - 1 && a[ix] == 1))
+           || (\exists integer ix; (0 <= ix <= m - 1 && b[ix] == 1))
+          <==> (\exists integer ix; (0 <= ix <= n + m - 1 && u[ix] == 1));
 */
 void uni(int a[], int b[], int n, int m, int u[]) {
 	int i = 0;
 	int j = 0;
 
     /*@
-      loop invariant i+j==k && i>=0 && j>=0 && i<=n && j<=m && k<=n+m &&
-			sorted(a, 0, n - 1) && sorted(b, 0, m - 1) && sorted(u,0,k-1) &&
-			(k>0 ==> (i<n ==>u[k-1]<=a[i]) && (j<m ==>u[k-1]<=b[j])) &&
-			((\exists int ix; (0 <= ix && ix < i && a[ix] == 1)
-				|| \exists int ix; (0 <= ix && ix < j && b[ix] == 1))
-				<==> \exists int ix; (0 <= ix && ix < k && u[ix] == 1));
-        loop variant n + m - k;
+	  loop invariant n > 0 && m > 0;
+	  loop invariant \valid(a + (0..n-1));
+	  loop invariant \valid(b + (0..m-1));
+	  loop invariant \valid(u + (0..n+m-1));
+      loop invariant i + j == k;
+	  loop invariant 0 <= i <= n && 0 <= j <= m && k <= n + m;
+	  loop invariant sorted(a, 0, n - 1);
+	  loop invariant sorted(b, 0, m - 1);
+	  loop invariant sorted(u, 0, k - 1);
+	  loop invariant k > 0 ==> (i < n ==> u[k - 1] <= a[i]) && (j < m ==> u[k - 1] <= b[j]);
+	  loop invariant (\exists integer ix; (0 <= ix < i && a[ix] == 1))
+						|| (\exists integer ix; (0 <= ix < j && b[ix] == 1))
+					<==> (\exists integer ix; (0 <= ix < k && u[ix] == 1));
+      loop variant n + m - k;
      */
-	for (int k = 0; k < n+m; k = k + 1)
+	for (int k = 0; k < n + m; k = k + 1)
 	{
 		if (i >= n) {
 			u[k] = b[j];

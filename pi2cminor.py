@@ -21,7 +21,10 @@ if __name__ == "__main__":
     c_answers = {}
     for testcase in os.listdir(args.dir):
         if testcase.endswith('.c'):
-            c_answers[testcase] = pi_answers[testcase.replace('.c', '.pi')]
+            if testcase.replace('.c', '.pi') in pi_answers:
+                c_answers[testcase] = pi_answers[testcase.replace('.c', '.pi')]
+            else:
+                print(f'new testcase: {testcase}')
     
     # 写回 answers.json
     with open(os.path.join(args.dir, 'answers.json'), 'w') as f:

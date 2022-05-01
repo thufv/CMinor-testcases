@@ -6,6 +6,7 @@
 void abs(int a_0[], int n) {
     /*@
       loop invariant 0 <= i <= n;
+	  loop invariant \valid(a_0 + (0..n-1));
       loop variant n - i;
      */
 	for

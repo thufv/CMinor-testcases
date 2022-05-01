@@ -1,35 +1,40 @@
 /*@
-  predicate sorted(int* arr, integer low, integer high) = 
-  (\forall int sorted_a,sorted_b; ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high) ==> arr[sorted_a]<=arr[sorted_b]));
+  predicate sorted(integer[] arr, integer low, integer high) = 
+  (\forall integer sorted_a,sorted_b;
+    ((low <= sorted_a && sorted_a <= sorted_b && sorted_b <= high)
+      ==> arr[sorted_a]<=arr[sorted_b]));
 
-predicate partitioned(int* arr, integer low1, integer high1, integer low2, integer high2) =
-  (\forall int partitioned_a, partitioned_b; ((low1 <= partitioned_a && partitioned_a <= high1 && low2 <= partitioned_b && partitioned_b <= high2) ==> arr[partitioned_a]<=arr[partitioned_b]));
+predicate partitioned(integer[] arr, integer low1, integer high1, integer low2, integer high2) =
+  (\forall integer partitioned_a, partitioned_b;
+    ((low1 <= partitioned_a <= high1 && low2 <= partitioned_b <= high2)
+      ==> arr[partitioned_a]<=arr[partitioned_b]));
   */
 
 /*@
-  requires l <= u;
-  ensures l <= \result && \result <= u;
-  decreases u + 1;
+  requires 0 <= l <= u;
+  decreases (u - l, 1);
+  ensures l <= \result <= u;
  */
 int random(int l, int u)
 {
-	/* a placeholder: only the @post is important */
+	/* a placeholder: only the post condition is important */
 	return u;
 }
 
 /*@
-  requires  l<=u && l>=0 && u<n && n >= 0 &&
-      partitioned(a, 0, l - 1, l, u) &&
-      partitioned(a, l, u, u + 1, n - 1);
-  requires \valid(a+(0..n-1));
-  decreases n + 1;
+  requires 0 <= l <= u;
+  requires u < n;
+  requires n > 0;
+  requires partitioned(a, 0, l - 1, l, u);
+  requires partitioned(a, l, u, u + 1, n - 1);
+  requires \valid(a + (0..n-1));
+  decreases (u - l, 2);
   ensures
       \result >=l && \result <=u &&
       partitioned(a, l, \result - 1, \result, \result) &&
       partitioned(a, \result, \result, \result + 1, u) &&
       partitioned(a, 0, l - 1, l, u) &&
       partitioned(a, l, u, u + 1, n - 1);
-  ensures \valid(a+(0..n-1));
 */
 int partition(int a[], int n, int l, int u) {
 	int pi = random(l, u);
@@ -41,13 +46,17 @@ int partition(int a[], int n, int l, int u) {
 
 	int i = l - 1;
     /*@
-      loop invariant \forall int x; ((x>=l && x<=i) ==> a[x]<=pv) &&
-		\forall int x; ((x>i && x<j) ==> a[x]>=pv) &&
- 		j>i && i>=l-1 && j<=u && a[u]==pv && i>=-1 && l<=u && l>=0 &&
-		partitioned(a, 0, l - 1, l, u) &&
-        partitioned(a, l, u, u + 1, n - 1) &&
-        u < n;
-     loop variant u - j;
+      loop invariant n > 0;
+      loop invariant \valid(a + (0..n-1));
+      loop invariant \forall integer x; (l <= x <= i ==> a[x]<=pv);
+		  loop invariant \forall integer x; (i < x < j ==> a[x]>=pv);
+ 		  loop invariant l - 1 <= i < j <= u < n;
+      loop invariant 0 <= l <= u;
+      loop invariant i >= -1;
+      loop invariant a[u] == pv;
+      loop invariant partitioned(a, 0, l - 1, l, u);
+      loop invariant partitioned(a, l, u, u + 1, n - 1);
+      loop variant (u - j, 0);
     */
 	for
 		(int j = l; j < u; j = j + 1)
@@ -71,16 +80,16 @@ int partition(int a[], int n, int l, int u) {
 }
 
 /*@
-  requires l>=0 && u < n && n >= 0 &&
-    partitioned(a_0, 0, l - 1, l, u) &&
-    partitioned(a_0, l, u, u + 1, n - 1) &&
-    l <= u + 1;
-  requires \valid(a_0+(0..n-1));
-  decreases n + u - l;
-  ensures sorted(a_0,l,u) &&
-        partitioned(a_0, 0, l - 1, l, u) &&
-        partitioned(a_0, l, u, u + 1, n - 1);
-  ensures \valid(a_0+(0..n-1));
+  requires 0 <= l <= u + 1;
+  requires u < n;
+  requires n > 0;
+  requires partitioned(a_0, 0, l - 1, l, u);
+  requires partitioned(a_0, l, u, u + 1, n - 1);
+  requires \valid(a_0 + (0..n-1));
+  decreases (u - l + 1, 3);
+  ensures sorted(a_0, l, u);
+  ensures partitioned(a_0, 0, l - 1, l, u);
+  ensures partitioned(a_0, l, u, u + 1, n - 1);
 */
 void qsort(int a_0[], int n, int l, int u) {
 	if (l >= u)
@@ -94,11 +103,10 @@ void qsort(int a_0[], int n, int l, int u) {
 }
 
 /*@
-  requires n >= 0;
-  requires \valid(a+(0..n-1));
-  decreases 2 * n + 1;
+  requires n > 0;
+  requires \valid(a + (0..n-1));
+  decreases (n, 4);
   ensures sorted(a, 0, n - 1);
-  ensures \valid(a+(0..n-1));
  */
 void QuickSort(int a[], int n)
 {

@@ -2,13 +2,13 @@
 
 /*@
     requires n >= 0;
-    decreases n;
+    decreases (n, n + 1);
     ensures  \true;
  */
 void foo(int n) {
     /*@
       loop invariant n >= 0 && i >= 0 && i <= n;
-      loop variant n - i;
+      loop variant (n, n - i);
      */
 	for (int i = 0; i < n; i = i + 1)
 		{

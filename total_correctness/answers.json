@@ -1,102 +1,18 @@
-[
-    {
-        "filename": "trivial1.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "infinite_partial_correctness.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "Abs-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "Abs-termination.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "Abs-termination1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "BubbleSort-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "BubbleSort-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "InsertionSort-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "InsertionSort-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "LinearSearch-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "LinearSearch-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "Max-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "Max-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "MergeSort-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "MergeSort-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "QuickSort-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "QuickSort-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "SortedUnion-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "SortedUnion-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "UnsortedUnion-soln.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "UnsortedUnion-soln1.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "length_and_termination.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "termination_example2.pi",
-        "answer": "VERIFIED"
-    },
-    {
-        "filename": "negative_ranking_function.pi",
-        "answer": "UNVERIFIED"
-    },
-    {
-        "filename": "infinite_descending_ranking_function.pi",
-        "answer": "UNVERIFIED"
-    }
-]
+{
+	"Abs-soln.c": "VERIFIED",
+	"Abs-termination.c": "VERIFIED",
+	"BubbleSort-soln.c": "VERIFIED",
+	"fun.c": "VERIFIED",
+	"infinite_descending_ranking_function.c": "UNVERIFIED",
+	"infinite_partial_correctness.c": "UNVERIFIED",
+	"InsertionSort-soln.c": "VERIFIED",
+	"length_and_termination.c": "VERIFIED",
+	"LinearSearch-soln.c": "VERIFIED",
+	"Max-soln.c": "VERIFIED",
+	"negative_ranking_function.c": "UNVERIFIED",
+	"QuickSort-soln.c": "VERIFIED",
+	"SortedUnion-soln.c": "VERIFIED",
+	"termination_example.c": "VERIFIED",
+	"trivial.c": "VERIFIED",
+	"UnsortedUnion-soln.c": "VERIFIED"
+}

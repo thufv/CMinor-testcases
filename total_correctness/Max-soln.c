@@ -1,14 +1,15 @@
 /*@
     requires n > 0;
-    requires \valid(arr+(0..n-1));
+    requires \valid(arr + (0..n-1));
     decreases n + 1;
-    ensures \forall int ix; (ix >= 0 && ix < n ==> \result >= arr[ix]);
+    ensures \forall integer ix; (ix >= 0 && ix < n ==> \result >= arr[ix]);
 */
 int max(int arr[], int n) {
 	int max = arr[0];
     /*@
-      loop invariant \forall int j; (j < i && j >= 0 ==> max >= arr[j])
-		  && i >= 0 && i <= n;
+      loop invariant \forall integer j; (j < i && j >= 0 ==> max >= arr[j]);
+	  loop invariant 1 <= i <= n;
+	  loop invariant \valid(arr + (0..n-1));
       loop variant n - i;
      */
 	for
