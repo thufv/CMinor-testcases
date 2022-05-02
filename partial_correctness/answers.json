@@ -2,6 +2,7 @@
 	"Abs-correctness.c": "VERIFIED",
 	"Abs.c": "UNVERIFIED",
 	"Ackermann.c": "VERIFIED",
+	"add.c": "VERIFIED",
 	"array_length.c": "VERIFIED",
 	"array_updates.c": "VERIFIED",
 	"BinarySearch-correctness.c": "VERIFIED",

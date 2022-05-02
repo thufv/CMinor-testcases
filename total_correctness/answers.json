@@ -1,7 +1,6 @@
 {
 	"Abs-soln.c": "VERIFIED",
 	"Abs-termination.c": "VERIFIED",
-	"add.c": "VERIFIED",
 	"BubbleSort-soln.c": "VERIFIED",
 	"fib.c": "VERIFIED",
 	"fun.c": "VERIFIED",
