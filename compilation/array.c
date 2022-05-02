@@ -2,8 +2,5 @@
   @ ensures \result == a[0] + a[1] + a[2];
  */
 int fun(int a[], int len) {
-    // int t = a[0];
-    // a[0] = a[1];
-    // a[1] = t;
     return a[0] + a[1] + a[2];
 }

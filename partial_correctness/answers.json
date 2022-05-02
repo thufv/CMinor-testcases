@@ -22,6 +22,7 @@
 	"non_linear_arithmetic.c": "UNVERIFIED",
 	"path_with_call.c": "VERIFIED",
 	"predicates.c": "VERIFIED",
+	"return_struct.c": "UNVERIFIED",
 	"same_name_in_both_hands.c": "UNVERIFIED",
 	"struct.c": "VERIFIED",
 	"two_level_predicates.c": "VERIFIED",

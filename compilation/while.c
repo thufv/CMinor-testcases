@@ -5,5 +5,5 @@ void fun() {
     int x = 0;
     //@ loop invariant x < 1;
     while (x < 1)
-        ++x;
+      x = x + 1;
 }

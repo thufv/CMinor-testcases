@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # 使用方式：./test.py
-# 这个脚本应该在你的完整的 verifying compiler 项目的根目录下运行
+# 这个脚本应该在你的验证工具的项目的根目录下运行
 
 import os
 import subprocess
@@ -11,6 +11,7 @@ import json
 import timeit
 from termcolor import colored
 
+TIMEOUT=10 # 默认的超时时间是 10s
 
 # 返回的是一个 (得分，总分) 的二元组
 # 得分和总分都是直接是总评中的分数，不折分
@@ -42,10 +43,10 @@ The color indicates your correctness:
         }
 
         # 跑起来！并且对输出进行检验
-        def run_and_check(filepath: str, answer: str, timeout: int):
+        def run_and_check(filepath: str, answer: str):
             try:
                 cp = subprocess.run(["dotnet", "run", "-c", "Release", "--no-build", "--",
-                                     "--source", filepath], check=True, capture_output=True, timeout=timeout)
+                                     "--source", filepath], check=True, capture_output=True, timeout=TIMEOUT)
             except subprocess.TimeoutExpired as e:
                 # timeout 用黄色
                 print(colored("TIMEOUT", "yellow"), end=' ')
@@ -91,21 +92,18 @@ The color indicates your correctness:
         # 遍历每个 testcase
         with open(os.path.join(d, "answers.json"), "r") as f:
             testcases = json.load(f)
-            for testcase in testcases:
+            for filename, answer in testcases.items():
                 # 计算出 filepath 并检验其合法性
-                filepath = os.path.join(d, testcase["filename"])
-                assert filepath.endswith(".pi")
+                filepath = os.path.join(d, filename)
+                assert filepath.endswith(".c")
                 assert os.path.exists(filepath)
 
                 print(os.path.join(
-                    category, testcase["filename"]) + " ", end="")
-
-                # 默认值为 10s
-                timeout = testcase["timeout"] if "timeout" in testcase else 10
+                    category, filename) + " ", end="")
 
                 # 无论结果如何，也要把消耗的时间打印出来
                 time = timeit.timeit(
-                    stmt='run_and_check(filepath, testcase["answer"], timeout)',
+                    stmt='run_and_check(filepath, answer)',
                     globals=locals(),
                     number=1)
                 print("{:.2f}s".format(time))

@@ -7,6 +7,6 @@ struct A {
 */
 struct A fun() {
     struct A a;
-    a.x = 1;
+    a.x = 2;
     return a;
 }
