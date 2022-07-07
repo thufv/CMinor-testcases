@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 使用方式：./test.py
 # 这个脚本应该在你的验证工具的项目的根目录下运行
 
 import os
