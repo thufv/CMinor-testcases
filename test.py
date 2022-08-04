@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 这个脚本应该在你的验证工具的项目的根目录下运行
+# 我们默认认为这个脚本是在 CMinor 的验证框架的根目录下执行的
 
-import os
-import subprocess
-import json
-
-import timeit
+import os, subprocess, json, timeit, argparse
 from termcolor import colored
 
 TIMEOUT=10 # 默认的超时时间是 10s
@@ -129,6 +125,11 @@ The color indicates your correctness:
 
     return (score_sum, total_score_sum)
 
+parser = argparser.ArgumentParser(prog='Tester of CMinor Verifier')
+parser.add_argument('-d', '--directory', default='.', type=str,
+                    help='the path to the root directory of the verifier of CMinor'
 
 if __name__ == "__main__":
+    args = parser.parser_args()
+    os.chdir(args.directory)
     test()
