@@ -125,11 +125,11 @@ The color indicates your correctness:
 
     return (score_sum, total_score_sum)
 
-parser = argparser.ArgumentParser(prog='Tester of CMinor Verifier')
+parser = argparse.ArgumentParser(prog='Tester of CMinor Verifier')
 parser.add_argument('-d', '--directory', default='.', type=str,
                     help='the path to the root directory of the verifier of CMinor')
 
 if __name__ == "__main__":
-    args = parser.parser_args()
+    args = parser.parse_args()
     os.chdir(args.directory)
     test()
