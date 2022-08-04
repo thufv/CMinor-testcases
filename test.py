@@ -8,9 +8,11 @@ from termcolor import colored
 
 TIMEOUT=10 # 默认的超时时间是 10s
 
-# 返回的是一个 (得分，总分) 的二元组
-# 得分和总分都是直接是总评中的分数，不折分
 def test():
+    """
+    返回的是最终的得分（百分制）
+    """
+
     # 说明一下颜色的含义
     print("""
 The color indicates your correctness:
@@ -118,12 +120,11 @@ The color indicates your correctness:
             score, total_score))
 
         score_sum += score
-        total_score_sum += total_score
 
         # 美观起见，我们再空一行
         print("")
 
-    return (score_sum, total_score_sum)
+    return score_sum
 
 parser = argparse.ArgumentParser(prog='Tester of CMinor Verifier')
 parser.add_argument('-d', '--directory', default='.', type=str,
@@ -132,4 +133,6 @@ parser.add_argument('-d', '--directory', default='.', type=str,
 if __name__ == "__main__":
     args = parser.parse_args()
     os.chdir(args.directory)
-    test()
+    score = test()
+    with open('.score', 'w') as f:
+        print(score, file=f)

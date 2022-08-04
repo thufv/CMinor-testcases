@@ -30,9 +30,11 @@ dotnet build -c Release # 编译
 python3 testcases/test.py # 统一评测所有测例
 ```
 
-## 时间限制
+评测情况会打印至输出流中，总得分（百分制）会存在 `.score` 中。
 
-10s
+## 时间上限
+
+每个测例 10 秒。
 
 ## 分数设置
 
